@@ -25,7 +25,7 @@ public class Main {
     }
 
     // Method 1 for checking if a string matches a regex: using Pattern.matches
-    // TODO: Modify this code to check if the given string is non-empty, contains at least
+    // T0D0: Modify this code to check if the given string is non-empty, contains at least
     //       one lower case letter, at least one upper case letter, and at least one digit. If the
     //       string has all of these properties, the method should return true. If it is missing one
     //       or more properties, it should return false.
@@ -39,11 +39,10 @@ public class Main {
      */
     public static boolean checkForPassword(String str, int minLength) {
         if (str == null || str.isEmpty() || !(str.length() >= minLength)) return false;
-        final boolean propertyOne = Pattern.matches("^.*[a-z].*[A-Z].*\\d.*$|^.*[a-z].*\\d.*[A-Z].*$|" +
-                "^.*[A-Z].*[a-z].*\\d.*$|^.*[A-Z].*\\d.*[a-z].*$|^.*\\d.*[a-z].*[A-Z].*$|^.*\\d.*[A-Z].*[a-z].*$\n",
+        return Pattern.matches("^.*[a-z].*[A-Z].*\\d.*$|^.*[a-z].*\\d.*[A-Z].*$|" +
+                        "^.*[A-Z].*[a-z].*\\d.*$|^.*[A-Z].*\\d.*[a-z].*$|^.*\\d.*[a-z].*[A-Z].*$|" +
+                        "^.*\\d.*[A-Z].*[a-z].*$\n",
                 str);
-        return propertyOne;
-        }
     }
 
     // Method 2 for checking if a string conforms to a regex: using Matcher.find
