@@ -46,7 +46,7 @@ public class Main {
     }
 
     // Method 2 for checking if a string conforms to a regex: using Matcher.find
-    // TODO: Modify this method to return a list of all email addresses contained in the
+    // T0D0: Modify this method to return a list of all email addresses contained in the
     //       input string that end with "@mail.utoronto.ca" or "@utoronto.ca" with at least one
     //       character before the "@" symbol. The email addresses should be in the order they
     //       appear in the string.
@@ -57,7 +57,8 @@ public class Main {
      * @return a list containing the email addresses in the string.
      */
     public static List<String> extractEmails(String str) {
-        final Pattern pattern = Pattern.compile("REPLACE WITH CORRECT REGEX");
+        if (str == null) return new ArrayList<>();
+        final Pattern pattern = Pattern.compile("\\S+@(mail\\.)?utoronto\\.ca");
         final Matcher matcher = pattern.matcher(str);
         final List<String> result = new ArrayList<>();
         while (matcher.find()) {
